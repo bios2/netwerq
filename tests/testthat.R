@@ -1,4 +1,4 @@
 library(testthat)
-library(netwerk)
+library(netwerq)
 
-test_check("netwerk")
+test_check("netwerq")
