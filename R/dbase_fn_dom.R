@@ -8,26 +8,25 @@
 ##################
 
 
-dbase_fn = function(L) {
-  NS = nrow(L)
+dbase_fn <- function(L) {
+  NS <- nrow(L)
 
   # Remove cannibalism
-  diag(L)=0
+  diag(L) <- 0
 
   # First, identify the basal species
-  nprey = apply(L,2,sum, na.rm = TRUE)
-  basal = numeric(nrow(L))
-  basal[nprey == 0] = 1
-  rk = basal
+  nprey <- apply(L, 2, sum, na.rm = TRUE)
+  basal <- numeric(nrow(L))
+  basal[nprey == 0] <- 1
+  rk <- basal
 
   # Second, identify who feeds on the basal species
-  for(k in 2:10) {
-    for(i in 1:NS) {
-      for(j in 1:NS){
-        if(rk[i]==k-1 && rk[j] == 0 && L[i,j]%in%1 && i!=j) rk[j] = k
+  for (k in 2:10) {
+    for (i in 1:NS) {
+      for (j in 1:NS) {
+        if (rk[i] == k - 1 && rk[j] == 0 && L[i, j] == 1 && i != j) rk[j] <- k
       }
     }
   }
   return(rk)
 }
-

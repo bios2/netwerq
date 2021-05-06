@@ -30,3 +30,8 @@ usethis::use_github("bios2")
 usethis::use_git()
 
 usethis::use_readme_rmd()
+
+usethis::use_github_actions()
+
+
+usethis::use_test("dbase_fn_dom")
