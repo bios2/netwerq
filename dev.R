@@ -21,3 +21,12 @@ usethis::use_r("matrix_sum")
 usethis::use_test("matrix_sum")
 
 devtools::test()
+
+
+## set up version control
+
+usethis::use_github("bios2")
+
+usethis::use_git()
+
+usethis::use_readme_rmd()
